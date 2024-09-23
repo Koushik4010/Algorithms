@@ -1,3 +1,4 @@
+//O(nlog(logn))
 void sieveOfEratosthenes(int n) {
     vector<bool> isPrime(n + 1, true);
     isPrime[0] = isPrime[1] = false;
