@@ -3,14 +3,14 @@ private:
     int timer=1;
     void dfs(int x,int par,vector<int>& vis,vector<int> g[],vector<int>& tins,vector<int>& low,vector<vector<int>>& bridges){
         vis[x]=1;
-        tins[x]=low[x]=timer;
+        tins[x]=low[x]=timer;//update time of insertion and lowest anncestor it can reach
         timer++;
         for(auto c:g[x]){
             if(c==par)continue;
             if(vis[c]==0){
                 dfs(c,x,vis,g,tins,low,bridges);
-                low[x]=min(low[x],low[c]);
-                if(low[c]>tins[x]){
+                low[x]=min(low[x],low[c]);// update lowest ancestor for x
+                if(low[c]>tins[x]){// if child can reach low ancestor which is lower than time of insertion of x then mark it as bridge
                     bridges.push_back({x,c});
                 }
             }
