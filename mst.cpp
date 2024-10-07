@@ -38,7 +38,7 @@ class Solution
         // // Prims algo
         vector<int> vis(V,0);
         priority_queue<pair<int,pair<int,int>>,vector<pair<int,pair<int,int>>>,greater<pair<int,pair<int,int>>>> q;
-        q.push({0,{0,-1}});
+        q.push({0,{0,-1}});// {wt,{x,par}}
         vector<int> mst;
         int sum=0;
         
